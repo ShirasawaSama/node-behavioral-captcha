@@ -42,7 +42,6 @@ export class Captcha {
     const checkLength = this.config.checkLength[0] + (Math.random() * (this.config.checkLength[1] - this.config.checkLength[0]) + 0.4) | 0
     const checkDots = allDots.slice(0, checkLength)
     const thumbDots = this.genDots(thumbSize, this.config.thumbFontSize, checkDots.map(it => it.text))
-    console.log(thumbDots)
 
     return {
       image: await this.genImage(imageSize, allDots, Math.random() * 15 + 10 | 0, Math.random() * 4 + 5 | 0, this.backgroundImages[Math.random() * this.backgroundImages.length | 0]),
