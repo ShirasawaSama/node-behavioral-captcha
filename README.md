@@ -4,7 +4,13 @@ This is a simple behavioral captcha for node.js. (Based on [@napi-rs/canvas](htt
 
 ## Screenshots
 
-![example](screenshots/example.jpg)
+## Selection Captcha
+
+![selection](screenshots/selection.jpg)
+
+## Calculation Captcha
+
+![calculation](screenshots/calculation.jpg)
 
 ## Installation
 
@@ -15,7 +21,7 @@ npm install behavioral-captcha
 ## Usage
 
 ```typescript
-import createGenerator from 'behavioral-captcha'
+import { createSelectionCaptchaGenerator } from 'behavioral-captcha'
 
 /*
 const config = {
@@ -35,7 +41,7 @@ const config = {
   quality: 80
 }
 */
-const generator = await createGenerator()
+const generator = await createSelectionCaptchaGenerator()
 
 const captcha = await generator.generate()
 /*
