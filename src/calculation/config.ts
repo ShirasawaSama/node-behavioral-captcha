@@ -8,7 +8,7 @@ export const defaultConfig = {
   backgroundColor: '#fff',
   fonts: defaultFonts,
   angles: defaultAngles,
-  quality: 10
+  quality: 70
 }
 
 export type Config = typeof defaultConfig

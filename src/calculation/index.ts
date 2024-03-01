@@ -5,7 +5,11 @@ import { drawCircles, drawRandomLines } from '../utils.js'
 import { loadFonts } from '../config.js'
 
 export default class CalculationCaptcha {
-  constructor (private readonly config: Config = defaultConfig) { loadFonts(config.fonts) }
+  private readonly config: Config
+  constructor (config: Partial<Config> = { }) {
+    this.config = { ...defaultConfig, ...config }
+    loadFonts(this.config.fonts)
+  }
 
   public async generate (imageSize = this.config.size): Promise<{ image: Buffer, answer: number }> {
     const canvas = createCanvas(imageSize.width, imageSize.height)
